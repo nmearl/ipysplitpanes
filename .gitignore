@@ -1,0 +1,13 @@
+*.egg-info/
+.ipynb_checkpoints/
+dist/
+build/
+*.py[cod]
+node_modules/
+.idea
+
+# Compiled javascript
+ipysplitpanes/static/
+
+# OS X
+.DS_Store

@@ -1,0 +1,2 @@
+recursive-include ipysplitpanes/static *.*
+include jupyter-splitpanes.json
