@@ -7,7 +7,9 @@ node_modules/
 .idea
 
 # Compiled javascript
-ipysplitpanes/static/
+ipysplitpanes/labextension/
+ipysplitpanes/nbextension/
+
 
 # OS X
 .DS_Store
