@@ -2,6 +2,14 @@ from ._version import version_info, __version__
 
 from .widget import *
 
+
+def _jupyter_labextension_paths():
+    return [{
+        'src': 'labextension',
+        'dest': 'jupyter-splitpanes',
+    }]
+
+
 def _jupyter_nbextension_paths():
     """Called by Jupyter Notebook Server to detect if it is a valid nbextension and
     to install the widget
@@ -21,7 +29,7 @@ def _jupyter_nbextension_paths():
     """
     return [{
         'section': 'notebook',
-        'src': 'static',
+        'src': 'nbextension',
         'dest': 'jupyter-splitpanes',
         'require': 'jupyter-splitpanes/extension'
     }]

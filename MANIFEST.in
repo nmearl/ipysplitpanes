@@ -1,2 +1,3 @@
-recursive-include ipysplitpanes/static *.*
+recursive-include ipysplitpanes/nbextension *.*
+recursive-include ipysplitpanes/labextension *.*
 include jupyter-splitpanes.json

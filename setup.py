@@ -7,6 +7,7 @@ from subprocess import check_call
 import os
 import sys
 import platform
+import glob
 
 here = os.path.dirname(os.path.abspath(__file__))
 node_root = os.path.join(here, 'js')
@@ -66,8 +67,8 @@ class NPM(Command):
     node_modules = os.path.join(node_root, 'node_modules')
 
     targets = [
-        os.path.join(here, 'ipysplitpanes', 'static', 'extension.js'),
-        os.path.join(here, 'ipysplitpanes', 'static', 'index.js')
+        os.path.join(here, 'ipysplitpanes', 'nbextension', 'extension.js'),
+        os.path.join(here, 'ipysplitpanes', 'nbextension', 'index.js')
     ]
 
     def initialize_options(self):
@@ -131,15 +132,15 @@ setup_args = {
     'long_description': LONG_DESCRIPTION,
     'include_package_data': True,
     'data_files': [
-        ('share/jupyter/nbextensions/jupyter-splitpanes', [
-            'ipysplitpanes/static/extension.js',
-            'ipysplitpanes/static/index.js',
-            'ipysplitpanes/static/index.js.map',
-        ],),
+        ('share/jupyter/nbextensions/jupyter-splitpanes', glob.glob('ipysplitpanes/nbextension/*')),
+        ('share/jupyter/labextensions/jupyter-splitpanes',
+         glob.glob('ipysplitpanes/labextension/package.json')),
+        ('share/jupyter/labextensions/jupyter-splitpanes/static',
+         glob.glob('ipysplitpanes/labextension/static/*')),
         ('etc/jupyter/nbconfig/notebook.d' ,['jupyter-splitpanes.json'])
     ],
     'install_requires': [
-        'ipywidgets>=7.0.0',
+        'ipyvue>=1.5,<2',
     ],
     'packages': find_packages(),
     'zip_safe': False,
