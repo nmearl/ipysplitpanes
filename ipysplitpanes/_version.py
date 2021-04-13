@@ -1,8 +1,9 @@
 # Module version
-version_info = (0, 2, 0, 'final', 0)
+version_info = (0, 2, 0, 'dev', 0)
 
 # Module version stage suffix map
-_specifier_ = {'alpha': 'a', 'beta': 'b', 'candidate': 'rc', 'final': ''}
+_specifier_ = {'alpha': 'a', 'beta': 'b', 'candidate': 'rc', 'final': '',
+               'dev': 'dev'}
 
 # Module version accessible using ipysplitpanes.__version__
 __version__ = '%s.%s.%s%s'%(version_info[0], version_info[1], version_info[2],
